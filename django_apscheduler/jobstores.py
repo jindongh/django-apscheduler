@@ -176,7 +176,7 @@ class WrapExecutor(object):
             dje.traceback = event.traceback
         else:
             dje.status = DjangoJobExecution.SUCCESS
-            dje.retval = event.retval
+            dje.retval = event and event.retval or None
         dje.save()
 
         return self._orig_run_job_success(job_id, events)
