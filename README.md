@@ -1,8 +1,8 @@
 Django APScheduler
 ================================
 
-![Build status](http://travis-ci.org/sallyruthstruik/django-apscheduler.svg?branch=master)
-[![codecov](https://codecov.io/gh/sallyruthstruik/django-apscheduler/branch/master/graph/badge.svg)](https://codecov.io/gh/sallyruthstruik/django-apscheduler)
+![Build status](http://travis-ci.org/jindongh/django-apscheduler.svg?branch=master)
+[![codecov](https://codecov.io/gh/jindongh/django-apscheduler/branch/master/graph/badge.svg)](https://codecov.io/gh/jindongh/django-apscheduler)
 [![PyPI version](https://badge.fury.io/py/django_apscheduler.svg)](https://badge.fury.io/py/django_apscheduler)
 
 `APScheduler <https://github.com/agronholm/apscheduler>`_ for `Django <https://github.com/django/django>`_.
@@ -19,6 +19,11 @@ Features in this project:
 
 Usage
 -----
+
+* Install ``django_apscheduler``:
+  ```python
+  pip install git+https://github.com/jindongh/django-apscheduler.git
+  ```
 
 * Add ``django_apscheduler`` to ``INSTALLED_APPS`` in your Django project settings:
   ```python

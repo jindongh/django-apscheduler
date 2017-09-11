@@ -14,7 +14,7 @@ execute_now.short_description = "Force execute tasks right now"
 
 
 class DjangoJobAdmin(admin.ModelAdmin):
-    list_display = ["id", "name", "next_run_time_sec", "average_duration"]
+    list_display = ["id", "name", "next_run_time", "average_duration"]
     actions = [execute_now]
     def get_queryset(self, request):
         self._durations = {
@@ -26,21 +26,15 @@ class DjangoJobAdmin(admin.ModelAdmin):
         }
         return super(DjangoJobAdmin, self).get_queryset(request)
 
-    def next_run_time_sec(self, obj):
-        return obj.next_run_time.strftime("%Y-%m-%d %H:%M:%S")
-
     def average_duration(self, obj):
         return self._durations.get(obj.id) or 0
 
 
 
 class DjangoJobExecutionAdmin(admin.ModelAdmin):
-    list_display = ["id", "job", "html_status", "run_time_sec", "duration"]
+    list_display = ["id", "job", "html_status", 'retval', "run_time", "duration"]
 
     list_filter = ["job__name", "run_time", "status"]
-
-    def run_time_sec(self, obj):
-        return obj.run_time.strftime("%Y-%m-%d %H:%M:%S")
 
     def get_queryset(self, request):
         return super(DjangoJobExecutionAdmin, self).get_queryset(

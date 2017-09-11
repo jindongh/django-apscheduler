@@ -11,8 +11,7 @@ class DjangoJob(models.Model):
     job_state = models.BinaryField()
 
     def __str__(self):
-        status = 'next run at: %s' % self.next_run_time if self.next_run_time else 'paused'
-        return '%s (%s)' % (self.name, status)
+        return self.name
 
     class Meta:
         ordering = ('next_run_time', )
@@ -45,6 +44,7 @@ class DjangoJobExecution(models.Model):
     args = models.CharField(max_length=1000)
     kwargs = models.CharField(max_length=1000)
 
+    retval = models.TextField(null=True)
     exception = models.CharField(max_length=1000, null=True)
     traceback = models.TextField(null=True)
 

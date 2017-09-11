@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django_apscheduler',
-    version='0.2',
+    version='0.2.2',
     description='APScheduler for Django',
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -19,9 +19,9 @@ setup(
         "Framework :: Django :: 1.9",
     ],
     keywords='django apscheduler django-apscheduler',
-    url='http://github.com/sallyruthstruik/django-apscheduler',
-    author='Stas Kaledin',
-    author_email='staskaledin@gmail.com',
+    url='http://github.com/jindongh/django-apscheduler',
+    author='Jindong Huang',
+    author_email='jindongh@gmail.com',
     license='MIT',
     packages=find_packages(
         exclude=("tests", )
