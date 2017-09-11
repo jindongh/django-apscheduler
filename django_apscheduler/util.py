@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.utils.timezone import is_aware, make_naive, is_naive, make_aware
 
-
 def serialize_dt(dt):
     """
     Converts datetime with timezone to datetime without timezone if USE_TZ is False
